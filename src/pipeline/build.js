@@ -1,4 +1,4 @@
-import defaultAttributes from "../defaults";
+import getDefaultAttributes from "../defaults";
 
 export default function buildEvent(attributes = {}) {
   const {
@@ -28,7 +28,7 @@ export default function buildEvent(attributes = {}) {
   } = attributes;
 
   // fill in default values where necessary
-  const output = Object.assign({}, defaultAttributes, attributes);
+  const output = Object.assign({}, getDefaultAttributes(), attributes);
 
   // remove undefined values
   return Object.entries(output).reduce(
